@@ -6,6 +6,10 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this file,
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 #=============================================================================#
+# Modified from original source for use with Marlin firmware by:
+# Author: Tom Haraldseid (tohara)
+# Home:   https://github.com/tohara/marlin-cmake
+#=============================================================================#
 set(CMAKE_SYSTEM_NAME Arduino)
 
 set(CMAKE_C_COMPILER   avr-gcc)

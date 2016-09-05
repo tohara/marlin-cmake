@@ -1,5 +1,15 @@
-
-
+#=============================================================================#
+# Author: Tomasz Bogdal (QueezyTheGreat)
+# Home:   https://github.com/queezythegreat/arduino-cmake
+#
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this file,
+# You can obtain one at http://mozilla.org/MPL/2.0/.
+#=============================================================================#
+# Modified from original source for use with Marlin firmware by:
+# Author: Tom Haraldseid (tohara)
+# Home:   https://github.com/tohara/marlin-cmake
+#=============================================================================#
 
 #set(ARDUINO_SDK_PATH $ENV{HOME}/arduino-1.6.8)
 
