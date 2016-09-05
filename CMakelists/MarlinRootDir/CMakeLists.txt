@@ -1,4 +1,29 @@
 cmake_minimum_required(VERSION 3.0)
+
+#====================================================================#
+# Download marlin-cmake scriptfiles if not already installed         #
+# and add the path to the module path                                #
+#====================================================================#
+
+if(NOT EXISTS ${CMAKE_CURRENT_LIST_DIR}/marlin-cmake)
+
+file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/modules/Arduino_SDK.cmake
+              ${CMAKE_CURRENT_LIST_DIR}/marlin-cmake/modules/Arduino_SDK.cmake SHOW_PROGRESS)
+              
+file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/modules/marlin_cmake_functions.cmake
+              ${CMAKE_CURRENT_LIST_DIR}/marlin-cmake/modules/marlin_cmake_functions.cmake SHOW_PROGRESS)             
+
+file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/Platform/Arduino.cmake
+              ${CMAKE_CURRENT_LIST_DIR}/marlin-cmake/Platform/Arduino.cmake SHOW_PROGRESS)
+
+file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/settings/marlin_boards.txt
+              ${CMAKE_CURRENT_LIST_DIR}/marlin-cmake/settings/marlin_boards.txt SHOW_PROGRESS)
+              
+file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/toolchain/ArduinoToolchain.cmake
+              ${CMAKE_CURRENT_LIST_DIR}/marlin-cmake/toolchain/ArduinoToolchain.cmake SHOW_PROGRESS)
+
+endif()
+
 set(CMAKE_MODULE_PATH  ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_LIST_DIR}/marlin-cmake/modules)
 
 #====================================================================#
