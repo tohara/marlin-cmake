@@ -11,11 +11,11 @@ setup_motherboard(${PROJECT_NAME} ${CMAKE_CURRENT_LIST_DIR})
 
 #====================================================================#
 #  Setup all source files                                            #
-#                                                                    #
+#  Incude Marlin.ino to compile libs not included in *.cpp files     #
 #====================================================================#
 
 file(GLOB SOURCES "*.cpp")
-set(${PROJECT_NAME}_SRCS ${SOURCES})
+set(${PROJECT_NAME}_SRCS "${SOURCES};Marlin.ino")
 
 #====================================================================#
 #  Define the port for uploading code to the Arduino                 #
@@ -32,6 +32,7 @@ endif()
 #  Register arduino libraries not included in SDK                    #
 #====================================================================#
 #link_directories(/home/tom/test/ArduinoAddons) #U8glib
+#set(${PROJECT_NAME}_ARDLIBS U8glib)
 #set(U8glib_RECURSE True)
 
 #====================================================================#
