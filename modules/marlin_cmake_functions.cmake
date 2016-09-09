@@ -7,6 +7,8 @@
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 #=============================================================================#
 
+set(DIR_OF_MARLIN_CMAKE_FUNCTIONS_CMAKE ${CMAKE_CURRENT_LIST_DIR})
+
 function(read_define_value_from_header PATH VARIABLE)
 	
     if(EXISTS ${PATH})
@@ -97,7 +99,7 @@ function(get_motherboard SRCPATH)
 endfunction()
 
 function(setup_motherboard TARGET SRCPATH)
-    load_settings(${CMAKE_SOURCE_DIR}/marlin-cmake/settings/marlin_boards.txt)
+    load_settings(${DIR_OF_MARLIN_CMAKE_FUNCTIONS_CMAKE}/../settings/marlin_boards.txt)
     get_motherboard(${SRCPATH})
     set(${TARGET}_BOARD ${${MOTHERBOARD}.board} PARENT_SCOPE)
     set(${TARGET}_CPU ${${MOTHERBOARD}.mcu} PARENT_SCOPE)
