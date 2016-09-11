@@ -33,7 +33,11 @@ if(UNIX)
                                              /opt/local) # MacPorts
     endif()
 elseif(WIN32)
-    set(CMAKE_C_FLAGS	"-c") #Workaround for bug? in CMakeDetermineCompilerId.cmake that causes ld.exe stopped working if CMAKE_${lang}_FLAGS are not set before project is created.
-	set(CMAKE_CXX_FLAGS	"-c")
+    if(NOT CMAKE_C_FLAGS)
+		set(CMAKE_C_FLAGS	"-c") #Workaround for bug? in CMakeDetermineCompilerId.cmake that causes ld.exe stopped working if CMAKE_${lang}_FLAGS are not set before project is created.
+	endif()
+	if(NOT CMAKE_CXX_FLAGS)
+		set(CMAKE_CXX_FLAGS	"-c") #Workaround for bug? in CMakeDetermineCompilerId.cmake that causes ld.exe stopped working if CMAKE_${lang}_FLAGS are not set before project is created.
+	endif()
     include(Platform/WindowsPaths)
 endif()
