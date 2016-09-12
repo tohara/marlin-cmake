@@ -17,7 +17,7 @@ set(CMAKE_CXX_COMPILER avr-g++)
 
 # Add current directory to CMake Module path automatically
 if(EXISTS  ${CMAKE_CURRENT_LIST_DIR}/../Platform/Arduino.cmake)
-    set(CMAKE_MODULE_PATH  ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_LIST_DIR}/..)
+    set(CMAKE_MODULE_PATH  ${CMAKE_MODULE_PAT/+H} ${CMAKE_CURRENT_LIST_DIR}/..)
 endif()
 
 #=============================================================================#
@@ -33,11 +33,8 @@ if(UNIX)
                                              /opt/local) # MacPorts
     endif()
 elseif(WIN32)
-    if(NOT CMAKE_C_FLAGS)
-		set(CMAKE_C_FLAGS	"-c") #Workaround for bug? in CMakeDetermineCompilerId.cmake that causes ld.exe stopped working if CMAKE_${lang}_FLAGS are not set before project is created.
-	endif()
-	if(NOT CMAKE_CXX_FLAGS)
-		set(CMAKE_CXX_FLAGS	"-c") #Workaround for bug? in CMakeDetermineCompilerId.cmake that causes ld.exe stopped working if CMAKE_${lang}_FLAGS are not set before project is created.
-	endif()
+    # set flag -c for compiler ID test to avoid error message from linker.
+    set(CMAKE_C_COMPILER_ID_TEST_FLAGS_FIRST -c CACHE INTERNAL "") 
+	set(CMAKE_CXX_COMPILER_ID_TEST_FLAGS_FIRST -c CACHE INTERNAL "")
     include(Platform/WindowsPaths)
 endif()
