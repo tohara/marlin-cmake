@@ -1,5 +1,21 @@
 cmake_minimum_required(VERSION 2.8)
-
+#====================================================================#
+# Usage under Linux:                                                 #
+#                                                                    #
+#    From Marlin sourcefolder:                                       #
+#        mkdir build && cd build                                     #
+#        cmake ..                                                    #
+#        make                                                        #
+#                                                                    #
+# Usage under Windows:                                               #
+#                                                                    #
+#    From Marlin sourcefolder:                                       #
+#        mkdir build                                                 #
+#        cd build                                                    #
+#        cmake -G"Unix Makefiles" ..                                 #
+#        make                                                        #
+#====================================================================#
+ 
 #====================================================================#
 # Download marlin-cmake scriptfiles if not already installed         #
 # and add the path to the module path                                #
@@ -7,20 +23,25 @@ cmake_minimum_required(VERSION 2.8)
 
 if(NOT EXISTS ${CMAKE_BINARY_DIR}/marlin-cmake)
 
-file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/modules/Arduino_SDK.cmake
-              ${CMAKE_BINARY_DIR}/marlin-cmake/modules/Arduino_SDK.cmake SHOW_PROGRESS)
+    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/modules/Arduino_SDK.cmake
+                  ${CMAKE_BINARY_DIR}/marlin-cmake/modules/Arduino_SDK.cmake SHOW_PROGRESS)
+                  
+    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/modules/marlin_cmake_functions.cmake
+                  ${CMAKE_BINARY_DIR}/marlin-cmake/modules/marlin_cmake_functions.cmake SHOW_PROGRESS)             
+    
+    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/Platform/Arduino.cmake
+                  ${CMAKE_BINARY_DIR}/marlin-cmake/Platform/Arduino.cmake SHOW_PROGRESS)
+    
+    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/settings/marlin_boards.txt
+                  ${CMAKE_BINARY_DIR}/marlin-cmake/settings/marlin_boards.txt SHOW_PROGRESS)
+                  
+    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/toolchain/ArduinoToolchain.cmake
+                  ${CMAKE_BINARY_DIR}/marlin-cmake/toolchain/ArduinoToolchain.cmake SHOW_PROGRESS)
               
-file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/modules/marlin_cmake_functions.cmake
-              ${CMAKE_BINARY_DIR}/marlin-cmake/modules/marlin_cmake_functions.cmake SHOW_PROGRESS)             
-
-file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/Platform/Arduino.cmake
-              ${CMAKE_BINARY_DIR}/marlin-cmake/Platform/Arduino.cmake SHOW_PROGRESS)
-
-file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/settings/marlin_boards.txt
-              ${CMAKE_BINARY_DIR}/marlin-cmake/settings/marlin_boards.txt SHOW_PROGRESS)
-              
-file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/toolchain/ArduinoToolchain.cmake
-              ${CMAKE_BINARY_DIR}/marlin-cmake/toolchain/ArduinoToolchain.cmake SHOW_PROGRESS)
+    if(WIN32)
+        file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/resources/make.exe
+                      ${CMAKE_BINARY_DIR}/make.exe SHOW_PROGRESS)
+    endif(WIN32)
 
 endif()
 
