@@ -10,8 +10,7 @@ cmake_minimum_required(VERSION 2.8)
 # Usage under Windows:                                               #
 #                                                                    #
 #    From Marlin sourcefolder:                                       #
-#        mkdir build                                                 #
-#        cd build                                                    #
+#        mkdir build && cd build                                     #
 #        cmake -G"Unix Makefiles" ..                                 #
 #        make                                                        #
 #====================================================================#
