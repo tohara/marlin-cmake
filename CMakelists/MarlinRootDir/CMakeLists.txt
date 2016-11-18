@@ -22,23 +22,23 @@ cmake_minimum_required(VERSION 2.8)
 
 if(NOT EXISTS ${CMAKE_BINARY_DIR}/marlin-cmake)
 
-    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/modules/Arduino_SDK.cmake
+    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/v1.0.0/modules/Arduino_SDK.cmake
                   ${CMAKE_BINARY_DIR}/marlin-cmake/modules/Arduino_SDK.cmake SHOW_PROGRESS)
                   
-    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/modules/marlin_cmake_functions.cmake
+    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/v1.0.0/modules/marlin_cmake_functions.cmake
                   ${CMAKE_BINARY_DIR}/marlin-cmake/modules/marlin_cmake_functions.cmake SHOW_PROGRESS)             
     
-    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/Platform/Arduino.cmake
+    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/v1.0.0/Platform/Arduino.cmake
                   ${CMAKE_BINARY_DIR}/marlin-cmake/Platform/Arduino.cmake SHOW_PROGRESS)
     
-    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/settings/marlin_boards.txt
+    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/v1.0.0/settings/marlin_boards.txt
                   ${CMAKE_BINARY_DIR}/marlin-cmake/settings/marlin_boards.txt SHOW_PROGRESS)
                   
-    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/toolchain/ArduinoToolchain.cmake
+    file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/v1.0.0/toolchain/ArduinoToolchain.cmake
                   ${CMAKE_BINARY_DIR}/marlin-cmake/toolchain/ArduinoToolchain.cmake SHOW_PROGRESS)
               
     if(WIN32)
-        file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/master/resources/make.exe
+        file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/v1.0.0/resources/make.exe
                       ${CMAKE_BINARY_DIR}/make.exe SHOW_PROGRESS)
     endif(WIN32)
 
