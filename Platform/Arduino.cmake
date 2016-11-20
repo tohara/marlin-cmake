@@ -2184,7 +2184,7 @@ set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${ARDUINO_CXX_FLAGS}" CACHE STRING "")
 #=============================================================================#
 #                       Executable Linker Flags                               #
 #=============================================================================#
-set(ARDUINO_LINKER_FLAGS "-w -Os -Wl,--gc-sections")
+set(ARDUINO_LINKER_FLAGS "-w -Os -Wl,--gc-sections,--relax")
 set(CMAKE_EXE_LINKER_FLAGS                "${ARDUINO_LINKER_FLAGS}" CACHE STRING "")
 set(CMAKE_EXE_LINKER_FLAGS_DEBUG          "${ARDUINO_LINKER_FLAGS}" CACHE STRING "")
 set(CMAKE_EXE_LINKER_FLAGS_MINSIZEREL     "${ARDUINO_LINKER_FLAGS}" CACHE STRING "")
