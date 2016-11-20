@@ -17,7 +17,7 @@ set(CMAKE_CXX_COMPILER ${ARDUINO_SDK_PATH}/hardware/tools/avr/bin/avr-g++)
 
 # Add current directory to CMake Module path automatically
 if(EXISTS  ${CMAKE_CURRENT_LIST_DIR}/../Platform/Arduino.cmake)
-    set(CMAKE_MODULE_PATH  ${CMAKE_MODULE_PAT/+H} ${CMAKE_CURRENT_LIST_DIR}/..)
+    set(CMAKE_MODULE_PATH  ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_LIST_DIR}/..)
 endif()
 
 #=============================================================================#
