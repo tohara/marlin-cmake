@@ -22,7 +22,7 @@ cmake_minimum_required(VERSION 2.8)
 
 if(NOT EXISTS ${CMAKE_BINARY_DIR}/marlin-cmake)
 
-	set(SCRIPT_BRANCH v1.0.0)
+	set(SCRIPT_BRANCH dev)
 
     file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/${SCRIPT_BRANCH}/modules/Arduino_SDK.cmake
                   ${CMAKE_BINARY_DIR}/marlin-cmake/modules/Arduino_SDK.cmake SHOW_PROGRESS)
