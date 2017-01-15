@@ -42,13 +42,13 @@ if(NOT EXISTS ${CMAKE_CURRENT_LIST_DIR}/marlin-cmake)
                   
     if(WIN32)
         file(DOWNLOAD https://raw.githubusercontent.com/tohara/marlin-cmake/${SCRIPT_BRANCH}/resources/make.exe
-                      ${CMAKE_CURRENT_LIST_DIR}/resources/make.exe SHOW_PROGRESS)
+                      ${CMAKE_CURRENT_LIST_DIR}/marlin-cmake/resources/make.exe SHOW_PROGRESS)
     endif(WIN32)
               
 endif()
 
 if(WIN32 AND NOT EXISTS ${CMAKE_BINARY_DIR}/make.exe)
-    file(COPY ${CMAKE_CURRENT_LIST_DIR}/resources/make.exe DESTINATION ${CMAKE_BINARY_DIR}/)
+    file(COPY ${CMAKE_CURRENT_LIST_DIR}/marlin-cmake/resources/make.exe DESTINATION ${CMAKE_BINARY_DIR}/)
 endif()
 
 set(CMAKE_MODULE_PATH  ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_LIST_DIR}/marlin-cmake/modules)
