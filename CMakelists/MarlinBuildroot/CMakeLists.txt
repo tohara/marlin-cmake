@@ -20,7 +20,7 @@ cmake_minimum_required(VERSION 2.8)
 # and add the path to the module path                                #
 #====================================================================#
 
-set(SCRIPT_BRANCH dev) #Set to wanted marlin-cmake release tag or branch
+set(SCRIPT_BRANCH 1.0.2) #Set to wanted marlin-cmake release tag or branch
 
 if(NOT EXISTS ${CMAKE_CURRENT_LIST_DIR}/marlin-cmake)
 
